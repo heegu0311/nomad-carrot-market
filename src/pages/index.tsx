@@ -127,6 +127,12 @@ export default function Home() {
           <li>Hi</li>
           <li>Hi</li>
         </ul>
+        <input
+          type={"file"}
+          className={
+            "file:cursor-pointer file:hover:text-purple-400 file:hover:bg-white file:hover:border-purple-400 file:hover:border-2 file:transition-colors file:border-0 file:rounded-xl file:px-5  file:text-white file:bg-purple-400 file:border-2 file:border-transparent"
+          }
+        />
       </div>
     </>
   );
