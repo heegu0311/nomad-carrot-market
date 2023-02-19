@@ -122,6 +122,11 @@ export default function Home() {
             김치
           </span>
         </details>
+        <ul className="list-decimal marker:text-teal-500">
+          <li>Hi</li>
+          <li>Hi</li>
+          <li>Hi</li>
+        </ul>
       </div>
     </>
   );
