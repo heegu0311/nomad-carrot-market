@@ -22,7 +22,7 @@ export default function Home() {
           Checkout
         </button>
       </div>
-      <div className="bg-white overflow-hidden rounded-3xl shadow-xl">
+      <div className="bg-white overflow-hidden rounded-3xl shadow-xl group">
         <div className="bg-blue-500 p-6 pb-14">
           <span className="text-white text-2xl">Profile</span>
         </div>
@@ -32,7 +32,7 @@ export default function Home() {
               <span className="text-sm text-gray-500">Orders</span>
               <span className="font-medium">340</span>
             </div>
-            <div className="h-24 w-24 bg-red-400 rounded-full" />
+            <div className="h-24 w-24 bg-zinc-500 rounded-full group-hover:bg-red-300 transition-colors" />
             <div className="flex flex-col items-center">
               <span className="text-sm text-gray-500">Spent</span>
               <span className="font-medium">$340</span>
@@ -81,6 +81,30 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-white p-10 rounded-3xl shadow-xl"></div>
+      <form className="flex flex-col space-y-2 bg-blue-500 p-4">
+        <input
+          type="text"
+          required
+          placeholder="Username"
+          className="required:bg-green-100 invalid:text-red-300"
+          minLength={5}
+        />
+        <input
+          type="text"
+          disabled
+          placeholder="Username (Disabled)"
+          className="disabled:bg-red-300"
+          minLength={5}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="placeholder:text-blue-300"
+        />
+        <span></span>
+
+        <input type="submit" />
+      </form>
     </div>
   );
 }
