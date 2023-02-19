@@ -13,11 +13,6 @@ export default function Home() {
               <span className="font-semibold">$19</span>
             </div>
           ))}
-          {["a", "b", "c", ""].map((c, i) => (
-            <li key={i} className="bg-red-500 py-2 empty:hidden">
-              {c}
-            </li>
-          ))}
         </ul>
         <div className="flex justify-between mt-2 pt-2 border-t-4 border-dashed">
           <span>Total</span>
