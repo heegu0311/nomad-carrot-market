@@ -98,10 +98,16 @@ export default function Home() {
         />
         <input
           type="password"
+          required
           placeholder="Password"
-          className="placeholder:text-blue-300"
+          className="placeholder:text-blue-300 peer"
         />
-        <span></span>
+        <span className="hidden peer-invalid:block text-red-900">
+          Password is empty
+        </span>
+        <span className="hidden peer-valid:block text-yellow-500">
+          Password is filled
+        </span>
 
         <input type="submit" />
       </form>
