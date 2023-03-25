@@ -1,24 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FieldErrors, useForm } from "react-hook-form";
 
 interface LoginForm {
   username: string;
   password: string;
   email: string;
+  errors?: string;
 }
 
 export default function Forms() {
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
+    watch,
+    setValue,
+    setError,
+    reset,
+    resetField,
   } = useForm<LoginForm>({ mode: "onSubmit" });
 
   const onValid = (data: LoginForm) => {
     console.log(data);
+    resetField("password");
 
-    console.log("iam valid bby");
+    // 특정 상황에서
+    // setValue("username", "Hello React-hook-form");
+
+    fetch("/")
+      .then()
+      .catch(() => {
+        setError("username", { message: "The username is already taken" });
+      });
+
+    reset();
   };
 
   const onInValid = (errors: FieldErrors) => {
@@ -38,6 +53,7 @@ export default function Forms() {
         type="text"
         placeholder="Username"
       />
+      {errors.username?.message}
       <input
         {...register("email", {
           required: "email is required",
@@ -59,6 +75,7 @@ export default function Forms() {
         placeholder="Password"
       />
       <input type="submit" value="Create Account" />
+      {errors.errors?.message}
     </form>
   );
 }
